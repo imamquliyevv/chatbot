@@ -1,0 +1,123 @@
+/* ==== ÜMUMİ ==== */
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:#0f0f10;
+    color:#e5e5e5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* APP */
+.app{
+    width:700px;
+    height:85vh;
+    background:#18181b;
+    border-radius:16px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 0 40px rgba(0,0,0,.6);
+}
+
+/* ==== LOGO ==== */
+.logo-area{
+    text-align:center;
+    padding:20px 0 10px 0;
+}
+
+.ship{
+    font-size:42px;
+}
+
+/* ==== DALĞA ==== */
+.wave{
+    width:200px;
+    height:20px;
+    margin:8px auto;
+    position:relative;
+    overflow:hidden;
+}
+
+.wave::before{
+    content:"";
+    position:absolute;
+    width:300%;
+    height:100%;
+    background:
+        radial-gradient(circle at 25% 60%, #38bdf8 30%, transparent 31%),
+        radial-gradient(circle at 75% 40%, #22d3ee 30%, transparent 31%);
+    background-size:80px 30px;
+    opacity:.7;
+}
+
+.wave.active::before{
+    animation:waveMove 1s linear infinite;
+}
+
+@keyframes waveMove{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-80px); }
+}
+
+/* ==== CHAT ==== */
+.chat-box{
+    flex:1;
+    padding:20px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+/* MESAJLAR */
+.message{
+    max-width:75%;
+    padding:12px 16px;
+    border-radius:14px;
+    line-height:1.5;
+    white-space:pre-line;
+}
+
+/* USER */
+.user{
+    align-self:flex-end;
+    background:#2563eb;
+}
+
+/* BOT */
+.bot{
+    align-self:flex-start;
+    background:#27272a;
+}
+
+/* ==== INPUT ==== */
+.input-area{
+    display:flex;
+    border-top:1px solid #333;
+}
+
+input{
+    flex:1;
+    padding:16px;
+    background:#18181b;
+    border:none;
+    color:white;
+    font-size:15px;
+}
+
+input:focus{ outline:none; }
+
+button{
+    width:120px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
